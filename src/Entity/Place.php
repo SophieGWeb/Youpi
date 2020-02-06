@@ -33,7 +33,7 @@ class Place
     private $age;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\collectivite", inversedBy="places")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Collectivite", inversedBy="places")
      * @ORM\JoinColumn(nullable=false)
      */
     private $collectivite;

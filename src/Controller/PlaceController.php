@@ -33,16 +33,16 @@ class PlaceController extends AbstractController
         $form=$this->createForm(PlaceFormType::class, $place);
         //je recupere les données du form
         $form->handleRequest($request);
-
+        $collectivite = $this->getUser();
         //si les données sont valides on peut enregistrer
         if($form->isSubmitted()&& $form->isValid()){
             // je procede a l'enregistrement
             $place->setDateDebut( new \DateTime);
             
             $place->setDateFin( new \DateTime);
-            
+            $place->setCollectivite($collectivite);
             $entityManager->persist($place);
-            //j'enregistre les donénes en bdd
+            //j'enregistre les données en bdd
             $entityManager->flush();
             
             return $this->redirectToRoute('dispo',[

@@ -32,6 +32,12 @@ class Place
      */
     private $age;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\collectivite", inversedBy="places")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $collectivite;
+
     
 
     public function getId(): ?int
@@ -71,6 +77,18 @@ class Place
     public function setAge(age $age): self
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    public function getCollectivite(): ?collectivite
+    {
+        return $this->collectivite;
+    }
+
+    public function setCollectivite(?collectivite $collectivite): self
+    {
+        $this->collectivite = $collectivite;
 
         return $this;
     }

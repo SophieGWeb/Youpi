@@ -9,6 +9,7 @@ use App\Repository\PlaceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PlaceController extends AbstractController
@@ -37,9 +38,7 @@ class PlaceController extends AbstractController
         //si les données sont valides on peut enregistrer
         if($form->isSubmitted()&& $form->isValid()){
             // je procede a l'enregistrement
-            $place->setDateDebut( new \DateTime);
             
-            $place->setDateFin( new \DateTime);
             $place->setCollectivite($collectivite);
             $entityManager->persist($place);
             //j'enregistre les données en bdd
@@ -52,5 +51,8 @@ class PlaceController extends AbstractController
         return $this ->render('place/index.html.twig',[
             'form_place'=>$form->createView()
         ]);
+    }
+    public function show(){
+
     }
 }

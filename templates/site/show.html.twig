@@ -1,15 +1,19 @@
  
  {# Ici j'affiche les places disponibles avec  les informations de tarifs, et de modalité #}
  {% extends 'base.html.twig' %}
+ {% Place %}
+
 {% body %}
     <div class = "card text-white bg-info mb-3" style = "max-width: 20rem;">
         <div class = "card-header"> 
-            <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> {{collectivite.nom}}</font> </font> 
+        {% for place in places %}
+            <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> </font> </font> 
         </div>
         <div class = "card-body">
             
-            <h4 class = "card-title"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Tranche d'age: 7 ans</font></font> </h4>
-            <p class = "card-text"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> du 24 au 28 fevrier <br> Tel au :04 72 ....</font> </font> </p>
+            {# <h4 class = "card-title"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"><a href=" {{ path('place_show',{'id'}: place.id} ) }}"></font></font> </h4> #}
+            <p class = "card-text"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">{{place.dateDebut }} à {{place.dateFin }} </font> </font> </p>
+        {# <p> {{ id.age}}</p> #}
         </div>
         <hr>
         <p>Condition d'inscription</p>

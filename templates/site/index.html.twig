@@ -1,20 +1,31 @@
-{# Ici j'affiche les places disponibles @Route /dispo #}
-{% extends 'base.html.twig' %}
 
-
-
+ {# Ici j'affiche les places disponibles avec  les informations de tarifs, et de modalité #}
+ {% extends 'base.html.twig' %}
+ 
 {% block body %}
-<section class="Places">
-<div class = "card text-white bg-info mb-3" style = "max-width: 20rem;">
-    <div class = "card-header"> 
-    <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"></font> </font> 
-    </div>
-    <div class = "card-body">
-        <h4 class = "card-title"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> </font></font> </h4>
-        <h4 class = "card-title"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> </font></font> </h4>
-        <p class = "card-text"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> du 24 au 28 fevrier <br> Tel au :04 72 ....</font> </font> </p>
-    <a href="{{path("site_show") }}" class="badge badge-pill badge-light">Info</a>
-    </div>
-</div>
 
-{% endblock %}
+        <div class = "card text-white bg-info mb-3" style = "max-width: 20rem;">
+        
+       
+            <div class = "card-header"> 
+                {% for place in placesList %}
+                <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">{{place.id}} </font> </font> 
+            </div>
+            <div class = "card-body">
+                
+                {# <h4 class = "card-title"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"><a href=" {{ path('place_show',{'id'}: place.id} ) }}"></font></font> </h4> #}
+                <p class = "card-text"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">{{place.dateDebut|date('d-m-Y') }} à {{place.dateFin|date('d-m-Y') }} </font> </font> </p>
+            {# <p> {{ age.tranche}}</p>   #}
+            </div>
+            <hr>
+            <div>
+                <p>Condition d'inscription</p>
+                <p>Contact</p>
+           <hr>
+           
+    {% endfor %} 
+        </div> 
+        
+     </div>
+     <br>
+ {% endblock %} 

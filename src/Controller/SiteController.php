@@ -7,15 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SiteController extends AbstractController
 {
-    /**
-     * @Route("/dispo", name="dispo")
-     */
-    public function index()
-    {
-        return $this->render('site/index.html.twig', [
-            'controller_name' => 'SiteController',
-        ]);
-    }
+    
     /**
      * @Route("/",name="home")
      */

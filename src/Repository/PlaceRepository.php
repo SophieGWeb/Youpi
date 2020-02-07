@@ -18,6 +18,16 @@ class PlaceRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Place::class);
     }
+    
+    public function findHome($limit)
+    {
+        return $this->createQueryBuilder('place')
+            ->orderBy('place.id', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
     // /**
     //  * @return Place[] Returns an array of Place objects

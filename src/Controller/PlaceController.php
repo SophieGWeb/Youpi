@@ -19,12 +19,15 @@ class PlaceController extends AbstractController
      */
     public function index(PlaceRepository $placeRepository)
     {
-        $place =$placeRepository->findAll();
+        $places =$placeRepository->findAll();
 
-        return $this->render('place/index.html.twig', [
-            'place' => $place,
+        dump($places);
+
+        return $this->render('site/index.html.twig', [
+            'placesList' => $places,
         ]);
     }
+
     /**
      * @Route("/place", name="place")
      */
@@ -52,7 +55,5 @@ class PlaceController extends AbstractController
             'form_place'=>$form->createView()
         ]);
     }
-    public function show(){
-
-    }
+    
 }

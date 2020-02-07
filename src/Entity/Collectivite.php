@@ -48,7 +48,7 @@ class Collectivite implements UserInterface
     private $adresse;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="integer")
      */
     private $telephone;
 
@@ -183,7 +183,7 @@ class Collectivite implements UserInterface
         return $this;
     }
 
-    public function getTelephone(): ?string
+    public function getTelephone(): ?int
     {
         return $this->telephone;
     }

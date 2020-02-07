@@ -17,14 +17,8 @@ class SiteController extends AbstractController
             'title'=>"Bienvenue sur le site Youpi"
         ]);
     }
-    /**
-     * @Route("/site/dispo", name="site_show")
-     */
-    public function show()
-    {
-        return $this->render('site/show.html.twig');
 
-    }
+    
     /**
      * @Route("/login", name="login")
      */

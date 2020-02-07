@@ -20,11 +20,12 @@ class PlaceController extends AbstractController
     public function index(PlaceRepository $placeRepository)
     {
         $places =$placeRepository->findAll();
-
+        
         dump($places);
 
         return $this->render('site/index.html.twig', [
             'placesList' => $places,
+
         ]);
     }
 

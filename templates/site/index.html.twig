@@ -6,16 +6,17 @@
 
         <div class = "card text-white bg-info mb-3" style = "max-width: 20rem;">
         
-       
             <div class = "card-header"> 
                 {% for place in placesList %}
-                <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">{{place.id}} </font> </font> 
+                 {# Ici sera affiché le nom de la collectivité #}
+              
+               <font style = "vertical-align: inherit;"> {{place.collectivite.nom}} </font> 
             </div>
             <div class = "card-body">
-                
-                {# <h4 class = "card-title"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"><a href=" {{ path('place_show',{'id'}: place.id} ) }}"></font></font> </h4> #}
-                <p class = "card-text"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">{{place.dateDebut|date('d-m-Y') }} à {{place.dateFin|date('d-m-Y') }} </font> </font> </p>
-            {# <p> {{ age.tranche}}</p>   #}
+               
+                <h4 class = "card-title"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">{{place.age.tranche}}</font></font> </h4> 
+                <p class = "card-text">  <font style = "vertical-align: inherit;">{{place.dateDebut|date('d-m-Y') }} à {{place.dateFin|date('d-m-Y') }} </font> </p>
+            {# ici sera affiché la tranche d'age <p> {{ age.tranche}}</p>   #}
             </div>
             <hr>
             <div>
@@ -24,7 +25,7 @@
            <hr>
            
     {% endfor %} 
-        </div> 
+       
         
      </div>
      <br>

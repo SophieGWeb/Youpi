@@ -17,24 +17,58 @@ class Planning
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\collectivite", inversedBy="plannings")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Collectivite", inversedBy="plannings")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $creche;
+    private $collectivite;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $activiteMatin;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $activiteAprem;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getCreche(): ?collectivite
+    public function getCollectivite(): ?collectivite
     {
-        return $this->creche;
+        return $this->collectivite;
     }
 
-    public function setCreche(?collectivite $creche): self
+    public function setCollectivite(?collectivite $collectivite): self
     {
-        $this->creche = $creche;
+        $this->collectivite = $collectivite;
+
+        return $this;
+    }
+
+    public function getActiviteMatin(): ?string
+    {
+        return $this->activiteMatin;
+    }
+
+    public function setActiviteMatin(string $activiteMatin): self
+    {
+        $this->activiteMatin = $activiteMatin;
+
+        return $this;
+    }
+
+    public function getActiviteAprem(): ?string
+    {
+        return $this->activiteAprem;
+    }
+
+    public function setActiviteAprem(string $activiteAprem): self
+    {
+        $this->activiteAprem = $activiteAprem;
 
         return $this;
     }

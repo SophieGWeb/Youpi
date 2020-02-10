@@ -3,16 +3,30 @@
  {% extends 'base.html.twig' %}
  
 {% block body %}
+<br>
+<br>
+            <div class="simulateur">
+                 <p class="text-danger titre"><b>Pour connaitre votre tarif, veuillez noter votre Coefficient Famillial</b></p>
+                <div><input type="text"  id="monChamp" >
+                <p></p></div>
+                <button id="button" > Cliquez pour vérifier </button> 
+                
+
+
+            </div>
+            <br>
+            <br>
 <div class="row justify-content-around">
     
             {% for place in placesList %} 
             <div class="col-4">
                 <div class="card text-white bg-warning mb-3 " style="max-width: 20rem;">
                     <div class="card-header">
+                      {# Ici sera affiché le nom de la collectivité #}
                         <h4 class="card-title titre"> {{place.collectivite.nom}}</h4>
                     </div>
                     <div class="card-body">
-                        {# Ici sera affiché le nom de la collectivité #}
+                      
                     
                         <p class="card-text"> {{place.age.tranche}} </p>
                         <p>{{place.dateDebut|date('d-m-Y') }} à {{place.dateFin|date('d-m-Y') }}</p>
@@ -21,6 +35,7 @@
                 </div>  
              </div>
               {% endfor %}
+              
 </div> 
   
            

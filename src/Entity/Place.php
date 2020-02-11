@@ -26,17 +26,17 @@ class Place
      */
     private $dateFin;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Age", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $age;
+
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Collectivite", inversedBy="places")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Collectivite", inversedBy="place")
      */
     private $collectivite;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Age", inversedBy="places")
+     */
+    private $age;
 
     
 
@@ -69,29 +69,31 @@ class Place
         return $this;
     }
 
-    public function getAge(): ?age
+
+    public function getCollectivite(): ?Collectivite
+    {
+        return $this->collectivite;
+    }
+
+    public function setCollectivite(?Collectivite $collectivite): self
+    {
+        $this->collectivite = $collectivite;
+
+        return $this;
+    }
+
+    public function getAge(): ?Age
     {
         return $this->age;
     }
 
-    public function setAge(age $age): self
+    public function setAge(?Age $age): self
     {
         $this->age = $age;
 
         return $this;
     }
 
-    public function getCollectivite(): ?collectivite
-    {
-        return $this->collectivite;
-    }
-
-    public function setCollectivite(?collectivite $collectivite): self
-    {
-        $this->collectivite = $collectivite;
-
-        return $this;
-    }
 
  
 }

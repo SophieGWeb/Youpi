@@ -68,17 +68,15 @@ class Collectivite implements UserInterface
     private $plannings;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Place", mappedBy="collectivite", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Place", mappedBy="collectivite")
      */
-    private $places;
-
-
+    private $place;
 
 
     public function __construct()
     {
         $this->plannings = new ArrayCollection();
-        $this->places = new ArrayCollection();
+        $this->place = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -253,15 +251,15 @@ class Collectivite implements UserInterface
     /**
      * @return Collection|Place[]
      */
-    public function getPlaces(): Collection
+    public function getPlace(): Collection
     {
-        return $this->places;
+        return $this->place;
     }
 
     public function addPlace(Place $place): self
     {
-        if (!$this->places->contains($place)) {
-            $this->places[] = $place;
+        if (!$this->place->contains($place)) {
+            $this->place[] = $place;
             $place->setCollectivite($this);
         }
 
@@ -270,8 +268,8 @@ class Collectivite implements UserInterface
 
     public function removePlace(Place $place): self
     {
-        if ($this->places->contains($place)) {
-            $this->places->removeElement($place);
+        if ($this->place->contains($place)) {
+            $this->place->removeElement($place);
             // set the owning side to null (unless already changed)
             if ($place->getCollectivite() === $this) {
                 $place->setCollectivite(null);
@@ -280,10 +278,5 @@ class Collectivite implements UserInterface
 
         return $this;
     }
-
-    
-
-    
-
   
 }

@@ -25,11 +25,7 @@
                     <li class = "nav-item active">
                         <a class="nav-link" href="/dispo"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Places Disponibles</font> </font> <span class = "sr-only"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> (actuel) </font> </font> </ span > </a>
                     </li>
-                   {% if is_granted('ROLE_ADMIN')%}
-                    <li class = "nav-item">
-                        <a class="nav-link" href="/site/register"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Enregistrer une collectivité</font> </font> </a>
-                    </li>
-                    {% endif %}
+                   
                     <li class = "nav-item">
                         <a class="nav-link" href="/login"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Connexion Pro</font> </font> </a>
                     </li> 
@@ -48,7 +44,18 @@
                         <a class="nav-link" href="/planning"> <font style = "my-2 my-lg-0 "> <font style = "vertical-align: inherit;"> Créer votre planning</font> </font> </a>
                     </li>
                     {% endif %}
-                </ul>
+                
+                {% if is_granted('ROLE_ADMIN')%}
+                    <li class = "nav-item">
+                        <a class="nav-link" href="/collectivite"> <font style = "my-2 my-lg-0 "> <font style = "vertical-align: inherit;"> Espace Admin</font> </font> </a>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN')%}
+                    <li class = "nav-item">
+                        <a class="nav-link" href="/site/register"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Enregistrer une collectivité</font> </font> </a>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+                    </ul>
             </div>
 
         </nav>

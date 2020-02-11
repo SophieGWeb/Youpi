@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collectivite{% endblock %}
+
+{% block body %}
+    <h1>Collectivite</h1>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ collectivite.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ collectivite.email }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ collectivite.roles ? collectivite.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ collectivite.password }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ collectivite.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ collectivite.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ collectivite.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Codepostal</th>
+                <td>{{ collectivite.codepostal }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ collectivite.ville }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('collectivite_index') }}">Retour</a>
+
+    <a href="{{ path('collectivite_edit', {'id': collectivite.id}) }}">Editer</a>
+    <a href="{{ path('collectivite_delete',{'id':collectivite.id}) }}">Supprimer</a>
+ 
+    {{ include('collectivite/_delete_form.html.twig') }}
+{% endblock %}

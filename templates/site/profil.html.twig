@@ -1,25 +1,24 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-{% if app.user %}
-  <div class="mb-3">
-        <div class="image">
+  {% if app.user %}
+    <div class="mb-3">
+      <div class="image">
         <h1 class="display-5 titre"><b>Vous êtes connecté en tant que {{ app.user.username }}</b></h1>
-        <ul class="lead"> 
-          <li class="titre"><b>Votre nom : {{ app.user.nom }} </b> </li><br>
-          <img src="https://www.anma.fr/wordpress/wp-content/uploads/2015/10/031E1567%C2%A9S.CHALMEAU-1282x823.jpg"height="350px" alt="">
-          <li> Votre adresse : {{ app.user.adresse }}</li> <br> 
-          <li>{{ app.user.codepostal }} </li><br> 
-          <li>{{ app.user.ville}}</li> 
-        </ul>
-
-    <hr class="my-4">
-  <p> Votre Télephone : {{ app.user.telephone }}</p>
- 
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{{ path('app_logout') }}" role="button">Se déconnecter</a>
-  </p>
-</div>
-            {# ici je souhaite afficher un tableau des places de la collectivité connectée listée par date #}
-        </div>
-    {% endif %}
-    {% endblock %}
+          <ul class="lead"> 
+            <li class="titre"><b>Votre nom : {{ app.user.nom }} </b> </li><br>
+            <img src="https://www.anma.fr/wordpress/wp-content/uploads/2015/10/031E1567%C2%A9S.CHALMEAU-1282x823.jpg"height="350px" alt="">
+            <li> Votre adresse : {{ app.user.adresse }}</li> <br> 
+            <li>{{ app.user.codepostal }} </li><br> 
+            <li>{{ app.user.ville}}</li> 
+          
+            <li> Votre Télephone : 0{{ app.user.telephone }}</li>
+        
+          </ul> 
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="{{ path('app_logout') }}" role="button">Se déconnecter</a>
+            </p>
+      </div>
+              {# ici je souhaite afficher un tableau des places de la collectivité connectée listée par date #}
+    </div>
+  {% endif %}
+{% endblock %}

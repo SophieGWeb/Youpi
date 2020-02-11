@@ -23,6 +23,7 @@ class RegistrationFormType extends AbstractType
             ->add('codepostal')
             ->add('ville')
             
+            ->add('image')
 
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [

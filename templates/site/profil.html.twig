@@ -6,12 +6,17 @@
         <h1 class="display-5 titre"><b>Vous êtes connecté en tant que {{ app.user.username }}</b></h1>
           <ul class="lead"> 
             <li class="titre"><b>Votre nom : {{ app.user.nom }} </b> </li><br>
-            <img src="https://www.anma.fr/wordpress/wp-content/uploads/2015/10/031E1567%C2%A9S.CHALMEAU-1282x823.jpg"height="350px" alt="">
+            <img src=" {{ app.user.image }}" alt="" srcset="">
+            
             <li> Votre adresse : {{ app.user.adresse }}</li> <br> 
             <li>{{ app.user.codepostal }} </li><br> 
             <li>{{ app.user.ville}}</li> 
           
             <li> Votre Télephone : 0{{ app.user.telephone }}</li>
+            <div class="alert alert-dismissible alert-info">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <p>Si vous voulez modifier votre Profil, veuillez contacter votre webmaster.</p> 
+             </div>
         
           </ul> 
             <p class="lead">

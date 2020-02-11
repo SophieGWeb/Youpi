@@ -4,16 +4,16 @@
 
 {% block body %}
     <section class="text-center">
-    <div class="alert alert-dismissible alert-danger">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong class="alert-link">Attention seule une collectivité peut s'inscrire
-</div>
+   
     <h1 ></h1>
         <h1 class="titre">Formulaire</h1>
 
             {{ form_start(registrationForm) }}
+           
             <br>
             {{ form_row(registrationForm.nom) }}
+            <br>
+            {{ form_row(registrationForm.image) }}
             <br>
             {{ form_row(registrationForm.adresse) }}
             <br>
@@ -21,6 +21,7 @@
             <br>
             {{ form_row(registrationForm.codepostal) }}
             <br>
+        
             {{ form_row(registrationForm.ville) }}
             <br>
         
@@ -33,4 +34,8 @@
             <button class="btn btn-success">Enregistrement</button>
         </section>
     {{ form_end(registrationForm) }}
+    <br>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+    </div>
 {% endblock %}

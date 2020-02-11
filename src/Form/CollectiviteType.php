@@ -13,8 +13,8 @@ class CollectiviteType extends AbstractType
     {
         $builder
             ->add('email')
-            
             ->add('password')
+            ->add('image')
             ->add('nom')
             ->add('adresse')
             ->add('telephone')

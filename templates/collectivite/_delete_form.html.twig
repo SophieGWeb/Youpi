@@ -1,7 +1,5 @@
-<form method="post" action="{{ path('collectivite_delete', {'id': collectivite.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+<form method="post" action="{{ path('collectivite_delete', {'id': collectivite.id}) }}" onsubmit="return confirm('Voulez vous vraiment supprimer cette collectivité?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ collectivite.id) }}">
-    
-    
-    <button class="btn ">Effacer</button>
+    <button class="btn btn-danger">Effacer</button>
 </form>

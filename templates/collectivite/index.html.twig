@@ -6,7 +6,7 @@
 <br>
     <h2 class="align-items-center">Listes des collectivites </h2>
 <br><br>
-
+<img src="https://urbainecity.com/wp-content/uploads/2017/02/Lyon_soir.jpg" height="350px" alt="">
     <table class="table table-striped table-info">
         <thead>
             <tr>
@@ -35,9 +35,9 @@
                 <td>{{ collectivite.codepostal }}</td>
                 <td>{{ collectivite.ville }}</td>
                 <td>
-                    <a href="{{ path('collectivite_show', {'id': collectivite.id}) }}">Détails</a>
+                    <a class="btn btn-warning" href="{{ path('collectivite_show', {'id': collectivite.id}) }}">Détails</a>
                    
-                    <a href="{{ path('collectivite_delete', {'id': collectivite.id}) }}">Effacer</a>
+                    
 
                 </td>
             </tr>
@@ -50,5 +50,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_register') }}">Create new</a>
+    <a class="btn btn-success" href="{{ path('app_register') }}">Créer une nouvelle Collectivité</a>
 {% endblock %}

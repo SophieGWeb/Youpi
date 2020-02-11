@@ -84,14 +84,17 @@ class CollectiviteController extends AbstractController
      */
     public function delete(Request $request, Collectivite $collectivite): Response
     {
+        
        
 
         if ($this->isCsrfTokenValid('delete'.$collectivite->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($collectivite);
             $entityManager->flush();
+            
+            
         }
-
         return $this->redirectToRoute('collectivite_index');
+        
     }
 }

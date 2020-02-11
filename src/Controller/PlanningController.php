@@ -83,7 +83,7 @@ class PlanningController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="planning_delete", methods={"DELETE"})
+     * @Route("/{id}/delete", name="planning_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Planning $planning): Response
     {

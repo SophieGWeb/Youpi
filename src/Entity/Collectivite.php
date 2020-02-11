@@ -231,7 +231,7 @@ class Collectivite implements UserInterface
     {
         if (!$this->plannings->contains($planning)) {
             $this->plannings[] = $planning;
-            $planning->setCreche($this);
+            $planning->setCollectivite($this);
         }
 
         return $this;
@@ -242,8 +242,8 @@ class Collectivite implements UserInterface
         if ($this->plannings->contains($planning)) {
             $this->plannings->removeElement($planning);
             // set the owning side to null (unless already changed)
-            if ($planning->getCreche() === $this) {
-                $planning->setCreche(null);
+            if ($planning->getCollectivite() === $this) {
+                $planning->setCollectivite(null);
             }
         }
 

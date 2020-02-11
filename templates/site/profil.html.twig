@@ -1,13 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 {% if app.user %}
-        <div class="mb-3">
-        <div class="jumbotron">
-  <h1 class="display-3">Vous êtes connecté en tant que {{ app.user.username }}</h1>
-  <p class="lead"> Votre adresse : {{ app.user.adresse }} <br> {{ app.user.codepostal }} <br> {{ app.user.ville}} </p>
+  <div class="mb-3">
+        <div class="image">
+        <h1 class="display-5 titre"><b>Vous êtes connecté en tant que {{ app.user.username }}</b></h1>
+        <ul class="lead"> 
+          <li class="titre"><b>Votre nom : {{ app.user.nom }} </b> </li><br>
+          <img src="https://www.anma.fr/wordpress/wp-content/uploads/2015/10/031E1567%C2%A9S.CHALMEAU-1282x823.jpg"height="350px" alt="">
+          <li> Votre adresse : {{ app.user.adresse }}</li> <br> 
+          <li>{{ app.user.codepostal }} </li><br> 
+          <li>{{ app.user.ville}}</li> 
+        </ul>
 
-  <hr class="my-4">
+    <hr class="my-4">
   <p> Votre Télephone : {{ app.user.telephone }}</p>
+ 
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="{{ path('app_logout') }}" role="button">Se déconnecter</a>
   </p>

@@ -3,9 +3,9 @@
 {% block title %}Planning index{% endblock %}
 
 {% block body %}
-    <h1>Planning index</h1>
+    <h1 class="titre">Planning 2020</h1>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -32,6 +32,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('planning_new') }}">Create new</a>
+     <a href="{{ path('planning_new') }}">Create new</a><br>
+<img  src="https://files.slack.com/files-pri/TPR35450V-FTGNSL2M7/img_20190514_094819.jpg" height="500px" alt="">
+   
 {% endblock %}

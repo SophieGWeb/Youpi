@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Age;
 use App\Entity\Place;
+use App\Entity\Planning;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -28,6 +29,7 @@ class PlaceFormType extends AbstractType
                 // used to render a select box, check boxes or radios
                 // 'multiple' => true,
                  'expanded' => true,
+            
             ])
         
             ->add('save', SubmitType::class);

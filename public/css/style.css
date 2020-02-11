@@ -1,3 +1,11 @@
 .titre{
-    font-family: 'Cabin Sketch', cursive
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.container1{
+    text-align: center;
+}
+
+.basPage{
+    background-color: lightpink;
 }

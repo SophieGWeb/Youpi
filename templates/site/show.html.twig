@@ -3,22 +3,24 @@
  {% extends 'base.html.twig' %}
  
 {% block body %}
-    <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
-        <div class="card-header">  {% for place in placesList %} </div>
-            
+   
+        <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header">  {% for place in placesList %} </div>
                 
-            <div class="card-body">
-                    {# Ici sera affiché le nom de la collectivité #}
-                <h4 class="card-title"> {{place.collectivite.nom}}</h4>
-                <p class="card-text"> {{place.age.tranche}} </p>
-                <p>{{place.dateDebut|date('d-m-Y') }} à {{place.dateFin|date('d-m-Y') }}</p>
+                    
+                <div class="card-body">
+                        {# Ici sera affiché le nom de la collectivité #}
+                    <h4 class="card-title"> {{place.collectivite.nom}}</h4>
+                    <p class="card-text"> {{place.age.tranche}} </p>
+                    <p>{{place.dateDebut|date('d-m-Y') }} à {{place.dateFin|date('d-m-Y') }}</p>
+                </div>
+                    
+                
+                
+                
+           
+        {% endfor %} 
             </div>
-                
-            
-            
-             
-              
-    {% endfor %} 
         </div>
-    </div>
+    
  {% endblock %} 

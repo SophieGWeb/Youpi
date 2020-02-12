@@ -18,15 +18,6 @@ class SiteController extends AbstractController
         ]);
     }
 
-    
-    /**
-     * @Route("/login", name="login")
-     */
-    public function login()
-    {
-        return $this->render('site/login.html.twig');
-
-    }
     /**
      * @Route("/profil", name="profil")
      */

@@ -8,8 +8,9 @@ use Doctrine\ORM\EntityManager;
 use App\Repository\PlaceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PlaceController extends AbstractController
@@ -23,7 +24,7 @@ class PlaceController extends AbstractController
         
         dump($places);
 
-        return $this->render('site/index.html.twig', [
+        return $this->render('place/dispo.html.twig', [
             'placesList' => $places,
 
         ]);
@@ -56,5 +57,5 @@ class PlaceController extends AbstractController
             'form_place'=>$form->createView()
         ]);
     }
-    
+   
 }

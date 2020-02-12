@@ -1,21 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <section class="text-center">
+    <section class=" jumbotron text-center">
         <h1 class="titre">{{ title }}</h1>
 
         <p> Nous avons pensé que stopper son activité pour garder son enfant n'était pas envisageable pour tout le monde. </p> <br><br>
 
         <p> Ainsi est né Youpi afin de simplifier et regrouper toutes les places disponibles en collectivité, mis à jour régulierement par celles-ci.
         <br><br>
-        Liste des places disponibles  <br> <br>
-        Liste des places en centre aéré disponibles ici  (lien à mettre sur ici)
-        
+      
+        <br>
         <img src="https://tel.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FTEL.2Enews.2F2018.2F01.2F11.2F2ac84cd3-621d-4c80-a471-7fc663b1011f.2Ejpeg/1150x495/crop-from/top/quality/80/la-haut-est-il-possible-de-faire-s-envoler-une-maison-avec-des-ballons-video.jpg" height="300px" alt="">
    
 
    <br>
         Vous pouvez être tranquilles, nos collectivités s'occupent de vos enfants grâce à des animations enrichissantes.
-        <br>
+        
         <br>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -40,7 +39,32 @@
                 </div></div>
        
         </div>
-        
-   
+        <hr>
+   {# Ici on ajoutera un systeme de scrolling avec des informations concernant la ville de lyon #}
+        <div class="container jumbotron text-center">
+        <br>
+        <h3> <b>Information de la ville de Lyon</b></h3>
+            <img src="https://www.lyon.fr/sites/lyonfr/files/2020-01/iillustration-enfance-l.jpg" alt="">
+            <br><br>
+            <h6 style="color:red"><b>La Ville de Lyon et la Caisse d’allocations familiales du Rhône viennent de signer un contrat portant sur les actions à réaliser en faveur des petits et des familles.</b> </h6><br>
+
+
+
+        <p>  C’est le 4e Contrat Enfance-Jeunesse (CEJ) liant la Ville de Lyon et la Caisse d’allocations familiales du Rhône (CAF). Au service des familles, celui-ci encadre toutes les initiatives de la Ville cofinancées avec la CAF mises en œuvre entre 2019 et 2022. Pour les mener à bien, cette dernière apporte une contribution financière de plus de 40 millions d’euros.
+
+        Complétant ce budget, la Ville s’engage de son côté à prendre les mesures nécessaires pour aider les Lyonnais à mieux concilier leurs vies de famille, sociale et professionnelle.
+
+        À commencer par la création de places en crèches pour accompagner le dynamisme démographique de la ville. Des ouvertures et des extensions sont d’ores et déjà prévues.
+
+        Maison de la parentalité
+        Qu’elles travaillent à domicile ou chez les parents, les assistantes maternelles, et les bambins dont elles s’occupent, ont besoin de rencontrer, d’échanger, de partager… avec leurs homologues. C’est le rôle des Relais d’assistantes maternelles (RAM). Leur développement est également inscrit au CEJ.
+
+        Les Lieux d’accueil enfants parents (LAEP) sont aussi des outils indispensables à la socialisation des petits. Une autre de leurs missions consiste à aider les jeunes parents à appréhender leur rôle et à l’aborder plus sereinement. Il manquait un LAEP pour certains quartiers des 3e/6e, 8e et 9e arrondissements. Le CEJ a permis la création d’un lieu nomade qui s’installe en alternance dans ces secteurs, au plus près des familles.
+
+        Autre projet au programme du CEJ en cours, la création d’une Maison de la parentalité. Elle proposera une offre de services complète allant d’un LAEP à un RAM en passant par une ludothèque, un Point d’accueil des familles, des ateliers parents-enfants… À suivre.
+                    </p>
+                </div>
+                <img src="https://www.lyoncapitale.fr/wp-content/uploads/2019/07/image001-460x433.jpg" alt="">
+              
     <section>
 {% endblock %}

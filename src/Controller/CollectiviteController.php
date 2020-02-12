@@ -25,29 +25,7 @@ class CollectiviteController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/", name="collectivite_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        $collectivite = new Collectivite();
-        $form = $this->createForm(CollectiviteType::class, $collectivite);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($collectivite);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('collectivite_index');
-        }
-
-        return $this->render('collectivite/new.html.twig', [
-            'collectivite' => $collectivite,
-            'form' => $form->createView(),
-        ]);
-    }
-
+   
     /**
      * @Route("/{id}", name="collectivite_show", methods={"GET"})
      */

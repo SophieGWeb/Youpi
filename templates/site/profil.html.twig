@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block body %}
   {% if app.user %}
-    <div class="mb-3">
-      <div class="image">
+    <div class="jumbotron">
+      <div class="container centrage">
         <h1 class="display-5 titre"><b>Vous êtes connecté en tant que {{ app.user.username }}</b></h1>
           <ul class="lead"> 
             <li class="titre"><b>Votre nom : {{ app.user.nom }} </b> </li><br>
-            <img src=" {{ app.user.image }}" alt="" srcset="">
+              <img src=" {{ app.user.image }}" height="350px" alt="" srcset="">
             
             <li> Votre adresse : {{ app.user.adresse }}</li> <br> 
             <li>{{ app.user.codepostal }} </li><br> 
@@ -23,7 +23,7 @@
               <a class="btn btn-primary btn-lg" href="{{ path('app_logout') }}" role="button">Se déconnecter</a>
             </p>
       </div>
-              {# ici je souhaite afficher un tableau des places de la collectivité connectée listée par date #}
+              
     </div>
   {% endif %}
 {% endblock %}

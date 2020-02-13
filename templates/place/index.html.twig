@@ -3,18 +3,20 @@
 {% block body %}
 
 
-
-<div class="jumbotron example-wrapper ">
-    <h1>Hello {{  app.user.nom}}! ✅</h1>
-<center><img src="https://us.123rf.com/450wm/jackf/jackf1802/jackf180205061/95594475-happy-children-running-with-balloons-in-hands-on-summer-sunny-field.jpg?ver=6" alt=""></center>
-<br>
-    <p>Ici vous pouvez ajouter une place de votre collectivité qui est disponible</p>
-    
-    
-   {{ form(form_place) }}
+<div class="container text-center">
+    <div class="jumbotron example-wrapper ">
+        <h1 class="titre">Hello {{  app.user.nom}}! ✅</h1>
+        <center><img src="https://us.123rf.com/450wm/jackf/jackf1802/jackf180205061/95594475-happy-children-running-with-balloons-in-hands-on-summer-sunny-field.jpg?ver=6" alt=""></center>
+        <br>
+        <p>Ici vous pouvez ajouter une place de votre collectivité qui est disponible</p>
+        
+       
+                <p>{{ form(form_place) }}</p>
+            
   
 
+    </div>
 </div>
-
-
+    
 {% endblock %}
+

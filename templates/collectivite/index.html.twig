@@ -1,18 +1,16 @@
+{# Ici la liste des collectivites avec une possibilité d'ajout #}
 {% extends 'base.html.twig' %}
-
-{% block title %}Collectivite {% endblock %}
-
 {% block body %}
+
 <br>
-    <h1 class="titre">Listes des collectivites </h1>
+<center><FONT face="Cabin Sketch" size="30">Liste des collectivités</FONT><BR></center>
+    
 <br><br>
 <center><img src="https://urbainecity.com/wp-content/uploads/2017/02/Lyon_soir.jpg" height="350px" alt=""></center>
 
     <table class="table table-striped table-info">
         <thead>
             <tr>
-                
-              
                 
                 <th>Nom</th>
                 <th>Adresse</th>
@@ -35,19 +33,18 @@
                 <td>{{ collectivite.ville }}</td>
                 <td>
                     <a class="btn btn-warning" href="{{ path('collectivite_show', {'id': collectivite.id}) }}">Détails</a>
-                   
-                    
-
+                
                 </td>
             </tr>
            
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Aucun enregistrement</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a class="btn btn-success" href="{{ path('app_register') }}">Créer une nouvelle Collectivité</a>
+    <center><a class="btn btn-success" href="{{ path('app_register') }}">Créer une nouvelle Collectivité</a></center>
+
 {% endblock %}

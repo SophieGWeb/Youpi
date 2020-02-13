@@ -11,8 +11,12 @@
     {% if app.user %}
         <div class="mb-1">
             <div class="container">
+                {# reconnaissance de l'utilisateur #}
                 <title >Bonjour {{  app.user.nom}}! ✅ </title>
-             {{ app.user.image }}
+
+                <p>{{ app.user.image }}</p>
+                
+
                 <p class="lead"> Votre adresse : {{ app.user.adresse }} <br> {{ app.user.codepostal }} <br> {{ app.user.ville}} </p>
 
                 <hr class="my-4">
@@ -24,29 +28,28 @@
                         
         </div> 
     {% endif %}
+        {# Si la personne ne s'est pas loguée, le site lui demandera une authentification  #}
+        <h1 class="h3 titre text-center mb-3 font-weight-normal">Merci de vous enregistrer</h1>
 
-    <h1 class="h3 titre text-center mb-3 font-weight-normal">Merci de vous enregistrer</h1>
+        <center><img src="https://files.slack.com/files-pri/TPR35450V-FTYPG49B7/enregistrement.png" height="300px" alt=""></center>
 
-    <center>
-    <img src="https://files.slack.com/files-pri/TPR35450V-FTYPG49B7/enregistrement.png" height="300px" alt=""></center>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
+        <label for="inputEmail">Email</label>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}">
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+        <label for="inputPassword">Mot de passe</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+        <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}">
 
     
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" name="_remember_me"> Remember me
+                <input type="checkbox" name="_remember_me"> Se souvenir de moi
             </label>
         </div>
     
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        S'enregistrer
-    </button>
+    <button class="btn btn-lg btn-primary" type="submit"> S'enregistrer </button>
 </form>
 {% endblock %}

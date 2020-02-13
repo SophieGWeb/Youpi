@@ -1,12 +1,13 @@
+{# ici j'affiche la liste des plannings  #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Planning{% endblock %}
 {% block body %}
+    <center><FONT face="Cabin Sketch" size="30">Planning</FONT><BR></center>
+    
 
-    <h1 class="titre">Planning</h1>
-
-    <table class="table table-striped planning">
     <center><img class="displayed" src="https://lh3.googleusercontent.com/proxy/Wg6IYdnF2KTAf3C9POxd3qQW3hu0gsnwqtHlWG5kW5vC6Fqz6VBwVcEwY4uWy1g-1RwxwGSZLYR_SAB0faDiMZvswbbH4hdqVXLLVOIHATL3P8WbLcD2ayeey2Z7NpAs" alt=""></center>
+    <table class="table table-striped ">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -22,11 +23,13 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('planning_index') }}">back to list</a>
-
-    <a href="{{ path('planning_edit', {'id': planning.id}) }}">editer</a>
-    <a href="{{ path('planning_delete', {'id': planning.id}) }}">effacer </a>
+<button class="btn btn-dark"> <a href="{{ path('planning_index') }}">Retour</a></button>
+    
+ <button class="btn btn-warning"><a href="{{ path('planning_edit', {'id': planning.id}) }}">Editer</a></button>
+    
+    
 
     {{ include('planning/_delete_form.html.twig') }}
+     
+
 {% endblock %}

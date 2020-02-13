@@ -2,39 +2,42 @@
 
 {% block title %}Planning index{% endblock %}
 {% block body %}
+    <center><FONT face="Cabin Sketch" size="30">Planning 2020</FONT><BR></center>
+        
 
-    <h1 class="title">Planning 2020</h1>
-
-    <table class="table table-striped planning">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>ActiviteMatin</th>
-                <th>ActiviteAprem</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for planning in plannings %}
-            <tr>
-                <td>{{ planning.id }}</td>
-                <td>{{ planning.activiteMatin }}</td>
-                <td>{{ planning.activiteAprem }}</td>
-                <td>
-                    <a href="{{ path('planning_show', {'id': planning.id}) }}">show</a>
-                    <a href="{{ path('planning_edit', {'id': planning.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-     <button class="btn btn-warning"><a href="{{ path('planning_new') }}">Create new</a></button><br>
-    <center>
-        <img  src="https://files.slack.com/files-pri/TPR35450V-FTGNSL2M7/img_20190514_094819.jpg" height="500px" alt="">
-    </center>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>ActiviteMatin</th>
+                    <th>ActiviteAprem</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for planning in plannings %}
+                <tr>
+                    <td>{{ planning.id }}</td>
+                    <td>{{ planning.activiteMatin }}</td>
+                    <td>{{ planning.activiteAprem }}</td>
+                    <td>
+                        <a href="{{ path('planning_show', {'id': planning.id}) }}">Montrer</a>
+                        <a href="{{ path('planning_edit', {'id': planning.id}) }}">Editer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Pas d'enregistrement</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        
+        <button class="btn btn-warning"><a href="{{ path('planning_new') }}">Créer</a></button>
+        <br>
+        
+        <center>
+            <img  src="https://files.slack.com/files-pri/TPR35450V-FTGNSL2M7/img_20190514_094819.jpg" height="500px" alt="">
+        </center> 
    
 {% endblock %}

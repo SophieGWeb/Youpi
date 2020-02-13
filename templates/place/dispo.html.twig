@@ -3,45 +3,45 @@
  {% extends 'base.html.twig' %}
  
 {% block body %}
-<br>
-<br>
-            <div class="simulateur">
-                <h2 class="text-danger titre"><b>Pour connaitre votre tarif, veuillez noter votre Quotient Famillial</b></h2>
-                <div>
-                    <input type="text"  id="monChamp" >
-                
-                    <h3 class="titre text-success " id="resultat"></h2>
-               
-                </div>
-                <button id="button" > Cliquez pour vérifier </button> 
-                
-            </div>
-            <br>
-            <br>
-<div class="row justify-content-around ">
+    <br>
+    <br>
     
-            {% for place in placesList %} 
-            <div class="col-4">
-                <div class="card text-white bg-info mb-3 " style="max-width: 20rem;">
-                    <div class="card-header">
-                      {# Ici sera affiché le nom de la collectivité #}
-                        <h4 class="card-title titre"> {{place.collectivite.nom}}</h4>
-                    </div>
+    <div class="simulateur">
+        <h2 class="text-danger titre"><b>Pour connaitre votre tarif, veuillez noter votre Quotient Famillial</b></h2>
+                
+        <div>
+            <input type="text"  id="monChamp" >
+                
+            <h3 class="titre text-success " id="resultat"></h2>
+               
+        </div>
+            <button id="button" class="btn btn-warning" > Cliquez pour vérifier </button> 
+                
+    </div>
+    <br>
+    <br> 
+    <center><h2 class="text-dark titre"><b>Place disponibles</b></h2></center>
+    <div class="row justify-content-around ">
+     
+{% for place in placesList %} 
+        <div class="col-4">
+            <div class="card text-white bg-info mb-3 " style="max-width: 20rem;">
+                <div class="card-header">
+                    {# Ici sera affiché le nom de la collectivité #}
+                    <h4 class="card-title titre"> {{place.collectivite.nom}}</h4>
+                </div>
+
                     <div class="card-body">
-                      
-                    
                         <p class="card-text"> {{place.age.tranche}} </p>
                         <p>{{place.dateDebut|date('d-m-Y') }} à {{place.dateFin|date('d-m-Y') }}</p>
-                       <p> 0{{place.collectivite.telephone}}</p>
+                        <p> 0{{place.collectivite.telephone}}</p>
                     </div> 
                 </div>  
-             </div>
-              {% endfor %}
+            </div>
+{% endfor %}
               
-</div> 
-  
-           
-                   
+        </div> 
+              
  {% endblock %} 
 
  

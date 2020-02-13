@@ -11,7 +11,7 @@ body{
     text-align: center;
     opacity: 90%;
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     
 }
 .simulateur{

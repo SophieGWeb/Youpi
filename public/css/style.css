@@ -1,9 +1,19 @@
-
+body{
+    align-content: center;
+}
 .titre{
+    
     font-family: 'Cabin Sketch', cursive;
 }
 
-
-body{
-    align-content: center;
+.logo{
+  
+    text-align: center;
+    opacity: 90%;
+    display:flex;
+    justify-content: space-around;
+    
+}
+.simulateur{
+    text-align: center;
 }

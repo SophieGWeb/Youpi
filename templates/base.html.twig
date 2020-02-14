@@ -14,8 +14,9 @@
         {% endblock %}
     </head>
     <body>
+    {# Barre navigation avec reprise des nom de route pour rediriger sur chaque page #}
         <nav class = "navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand titre" href="/"> <font style = "vertical-align: inherit;">  Youpi </font> </a>
+            <a class="navbar-brand titre" href="/"> <font style = "vertical-align: inherit;"size="20">  Youpi </font> </a>
             <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "# navbarColor02" aria-controls = "navbarColor02" aria-extended = "false" aria-label = "Basculer la navigation ">
                 <span class = "navbar-toggler-icon"> </span>
             </button>
@@ -29,6 +30,7 @@
                     <li class = "nav-item">
                         <a class="nav-link" href="{{ path('app_login') }}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Connexion Pro</font> </font> </a>
                     </li> 
+                    {# Ici seul une collectivite aura acces #}
                     {% if is_granted('ROLE_USER')%}
                     <li class = "nav-item">
                         <a class="nav-link" href="{{ path('profil') }}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Votre Profil</font> </font> </a>
@@ -44,7 +46,7 @@
                         <a class="nav-link" href="{{ path('planning_index') }}"> <font style = "my-2 my-lg-0 "> <font style = "vertical-align: inherit;"> Créer votre planning</font> </font> </a>
                     </li>
                     {% endif %}
-                
+                    {# Ici seul l'admin aura acces #}
                     {% if is_granted('ROLE_ADMIN')%}
                     <li class = "nav-item">
                         <a class="nav-link" href="{{ path('collectivite_index') }}"> <font style = "my-2 my-lg-0 "> <font style = "vertical-align: inherit;"> Espace Admin</font> </font> </a>
@@ -68,7 +70,7 @@
         <br>
      
         
-            <div class="row logo bg-primary ">
+            <div class="row footer logo bg-primary ">
                 <a href="http://www.lyon.fr/"><img src="https://www.ttgerland.fr/media/uploaded/sites/13794/partenaire/5b859a737b49c_villedelyon.png" alt="logo de la ville de Lyon"></a>
                    
                         <a href="https://www.facebook.com/villedelyon"><img src="https://img.icons8.com/color/128/000000/facebook.png"></a>

@@ -2,9 +2,9 @@
 {% block body %}
   {% if app.user %}
     <div class="jumbotron">
-      <div class="container centrage">
+      <div class="container text-center ">
         <h1 class="display-5 titre"><b>Vous êtes connecté en tant que {{ app.user.username }}</b></h1>
-          <ul class="lead"> 
+          <ul class="lead "> 
             <li class="titre"><b>Votre nom : {{ app.user.nom }} </b> </li><br>
               <img src=" {{ app.user.image }}" height="350px" alt="" srcset="">
             
@@ -15,7 +15,7 @@
             <li> Votre Télephone : 0{{ app.user.telephone }}</li>
             <div class="alert alert-dismissible alert-info">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <p>Si vous voulez modifier votre Profil, veuillez contacter votre webmaster.</p> 
+              <p>Si vous voulez modifier votre Profil, veuillez contacter votre webmaster : <b> s.guerchi@hotmail.fr</b></p> 
              </div>
         
           </ul> 
